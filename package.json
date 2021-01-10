@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "standard --fix"
+    "test": "standard --fix && mocha"
   },
   "repository": {
     "type": "git",
@@ -33,10 +33,19 @@
     "babel-jest": "^25.1.0",
     "babel-preset-es2020": "^1.0.2",
     "babel-preset-stage-2": "^6.24.1",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "eslint-config-google": "^0.14.0",
-    "standard": "^16.0.3"
+    "mocha": "^8.2.1",
+    "standard": "^16.0.3",
+    "supertest": "^6.0.1"
   },
   "jest": {
     "collectCoverageFrom": []
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
   }
 }

@@ -37,6 +37,13 @@ app.use(function (req, res, next) {
 
 app.use(routes)
 
-app.listen(parseInt(cfg.port), function () {
+const server = app.listen(parseInt(cfg.port), function () {
   console.log(cfg.port + '::' + cfg.messageTerminal)
 })
+
+function stop () {
+  server.close()
+}
+
+module.exports = server
+module.exports.stop = stop

@@ -40,6 +40,6 @@ app.get('/', function (req, res, next) {
  *       400:
  *         description: Parámetros inválidos.
  */
-app.get('/iecho', iechoController.reverseText)
+app.get('/iecho', iechoController.getReverseText)
 
 module.exports = app
