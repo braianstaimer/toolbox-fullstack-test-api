@@ -1,0 +1,6 @@
+parameters:
+  textQuery:
+    in: query
+    name: text
+    description: Texto a invertir
+    type: string

@@ -1,0 +1,42 @@
+{
+  "name": "toolbox-fullstack-test-api",
+  "version": "1.0.0",
+  "description": "Backend para el Test de Full Stack en Toolbox.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/braianstaimer/toolbox-fullstack-test-api.git"
+  },
+  "keywords": [
+    "api",
+    "backend",
+    "toolbox"
+  ],
+  "author": "Braian Staimer",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.0",
+    "helmet": "^3.21.2",
+    "md5": "^2.2.1",
+    "moment": "^2.24.0",
+    "swagger-jsdoc": "^3.5.0",
+    "swagger-ui-express": "^4.1.3",
+    "tedious": "^8.0.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^25.1.0",
+    "babel-preset-es2020": "^1.0.2",
+    "babel-preset-stage-2": "^6.24.1",
+    "eslint-config-google": "^0.14.0",
+    "standard": "^16.0.3"
+  },
+  "jest": {
+    "collectCoverageFrom": []
+  }
+}
