@@ -1,5 +1,5 @@
 module.exports.errorMessages = {
-  noText: "no text",
-};
+  noText: 'no text'
+}
 
-module.exports.successMessages = {};
+module.exports.successMessages = {}

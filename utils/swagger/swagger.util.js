@@ -1,15 +1,13 @@
-const fs = require("fs");
+const fs = require('fs')
 
-function saveJSON(json_file) {
-  //create if not exist folder
-  if (!fs.existsSync("./swagger")) fs.mkdirSync(`./swagger`);
+function saveJSON (jsonFile) {
+  // create if not exist folder
+  if (!fs.existsSync('./swagger')) fs.mkdirSync('./swagger')
 
-  fs.writeFileSync("./swagger/swagger.json", json_file, "utf8", function(err) {
-    if (err)
-      return reject("An error occured while writing JSON Object to File.");
-    console.log("Swagger File Generated!");
-    resolve(true);
-  });
+  fs.writeFileSync('./swagger/swagger.json', jsonFile, 'utf8', function (err) {
+    if (err) console.log('An error occured while writing JSON Object to File.')
+    else console.log('Swagger File Generated!')
+  })
 }
 
-module.exports.saveJSON = saveJSON;
+module.exports.saveJSON = saveJSON

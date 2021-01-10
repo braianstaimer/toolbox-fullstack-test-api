@@ -1,30 +1,30 @@
 /**
  * Packages
  */
-var express = require("express");
+const express = require('express')
 
 /**
  * Controllers
  */
-const iechoController = require("../controllers/iecho.controller");
+const iechoController = require('../controllers/iecho.controller')
 
 /**
  * Settings
  */
-var app = express.Router();
+const app = express.Router()
 
-var swaggerUi = require("swagger-ui-express"),
-  swaggerDocument = require("../swagger/swagger.json");
+const swaggerUi = require('swagger-ui-express')
+const swaggerDocument = require('../swagger/swagger.json')
 
 /**
  * Documentation
  */
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-app.get("/", function (req, res, next) {
-  res.redirect("/api-docs");
-});
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+app.get('/', function (req, res, next) {
+  res.redirect('/api-docs')
+})
 
-//IECHO
+// IECHO
 /**
  * @swagger
  * /iecho:
@@ -40,6 +40,6 @@ app.get("/", function (req, res, next) {
  *       400:
  *         description: Parámetros inválidos.
  */
-app.get("/iecho", iechoController.reverseText);
+app.get('/iecho', iechoController.reverseText)
 
-module.exports = app;
+module.exports = app

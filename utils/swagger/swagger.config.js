@@ -1,22 +1,22 @@
-const swaggerJSDoc = require("swagger-jsdoc");
-const json = require("./swagger.util");
+const swaggerJSDoc = require('swagger-jsdoc')
+const json = require('./swagger.util')
 
-const cfg = require("../../cf");
-const port = cfg.port;
-const name = process.env.SWAGGER_NAME;
+const cfg = require('../../cf')
+const port = cfg.port
+const name = process.env.SWAGGER_NAME
 
 // Inicio - Configuraciones pertinentes a SwaggerJSDoc
 const swaggerDefinition = {
   info: {
     // Información de API (requerida)
     title: `API - ${name}`, // Título (requerido)
-    version: "1.0.0", // Versión (requerida)
-    description: `Documentación de API ${name}`, // Descripción (Opcional)
+    version: '1.0.0', // Versión (requerida)
+    description: `Documentación de API ${name}` // Descripción (Opcional)
   },
-  host: cfg.host + `:` + parseInt(port), // Host (Opcional)
+  host: cfg.host + ':' + parseInt(port), // Host (Opcional)
   basePath: cfg.basePath, // Base path (Opcional)
-  schemes: ["http", "https"],
-};
+  schemes: ['http', 'https']
+}
 
 // Opciones de Swagger
 const options = {
@@ -25,17 +25,17 @@ const options = {
   // Path de los lugares donde serán documentadas las API (routes)
   // Tenga en cuenta que esta ruta es relativa al directorio actual desde el que se ejecuta Node.js, no la aplicación en sí.
   apis: [
-    "./routes/*.js",
-    "./swagger/definitions/*.definitions.yaml",
-    "./swagger/parameters/*.parameters.yaml",
-  ],
-};
+    './routes/*.js',
+    './swagger/definitions/*.definitions.yaml',
+    './swagger/parameters/*.parameters.yaml'
+  ]
+}
 
 // Inicializar swagger-jsdoc -> Devuelve especificaciones de swagger validadas en formato json
-const swaggerSpec = swaggerJSDoc(options);
+const swaggerSpec = swaggerJSDoc(options)
 
 // Fin - Configuraciones pertinentes a SwaggerJSDoc
-function init() {
-  json.saveJSON(JSON.stringify(swaggerSpec));
+function init () {
+  json.saveJSON(JSON.stringify(swaggerSpec))
 }
-module.exports.init = init;
+module.exports.init = init

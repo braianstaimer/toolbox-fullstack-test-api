@@ -1,17 +1,17 @@
-const dotenv = require("dotenv");
-dotenv.config({ path: ".env" });
+const dotenv = require('dotenv')
+dotenv.config({ path: '.env' })
 
 module.exports = {
   // ------------- CONSTANTES PROPIAS --------------
-  allowMethods: "GET",
+  allowMethods: 'GET',
   allowHeaders:
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization, x-filename, Content-disposition",
-  allowExpose: "x-filename, Content-disposition",
-  allowOrigin: "*",
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization, x-filename, Content-disposition',
+  allowExpose: 'x-filename, Content-disposition',
+  allowOrigin: '*',
   // ------------- CONSTANTES INYECTABLES --------------
-  //Global variables
+  // Global variables
   host: process.env.HOST,
   port: parseInt(process.env.PORT),
   messageTerminal: process.env.MESSAGE_TERMINAL,
-  nodeEnvironment: process.env.NODE_ENV,
-};
+  nodeEnvironment: process.env.NODE_ENV
+}
