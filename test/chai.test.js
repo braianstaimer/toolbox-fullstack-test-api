@@ -17,10 +17,10 @@ after(async () => {
 
 describe('Chai - GET /iecho', function () {
   const path = '/iecho'
-  it('Invertir texto y validar si es palidrome', (done) => {
+  it('Invertir texto y validar si es palindrome', (done) => {
     const text = 'reconocer'
     const invertedText = 'reconocer'
-    const palidrome = true
+    const palindrome = true
     const params = {
       text: text
     }
@@ -31,15 +31,15 @@ describe('Chai - GET /iecho', function () {
       .then((result) => {
         should.equal(result.statusCode, 200)
         result.body.text.should.eq(invertedText)
-        result.body.palidrome.should.eq(palidrome)
+        result.body.palindrome.should.eq(palindrome)
       })
       .catch((err) => console.log(err))
     done()
   })
-  it('Invertir texto y validar que no es palidrome', (done) => {
+  it('Invertir texto y validar que no es palindrome', (done) => {
     const text = 'test'
     const invertedText = 'tset'
-    const palidrome = false
+    const palindrome = false
     const params = {
       text: text
     }
@@ -50,7 +50,7 @@ describe('Chai - GET /iecho', function () {
       .then((result) => {
         should.equal(result.statusCode, 200)
         result.body.text.should.eq(invertedText)
-        result.body.palidrome.should.eq(palidrome)
+        result.body.palindrome.should.eq(palindrome)
       })
       .catch((err) => console.log(err))
     done()

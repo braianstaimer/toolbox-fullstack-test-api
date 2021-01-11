@@ -24,29 +24,29 @@ describe('String', function () {
     it('Verifica si el texto es un palindrome, y retorna una bandera', function () {
       const text = 'reconocer'
       const invertedText = 'reconocer'
-      const palidrome = true
-      assert.strictEqual(isPalindrome(text, invertedText), palidrome)
+      const palindrome = true
+      assert.strictEqual(isPalindrome(text, invertedText), palindrome)
     })
     it('El texto no es un palindrome', function () {
       const text = 'test'
       const invertedText = 'tset'
-      const palidrome = true
-      assert.notStrictEqual(isPalindrome(text, invertedText), palidrome)
+      const palindrome = true
+      assert.notStrictEqual(isPalindrome(text, invertedText), palindrome)
     })
   })
   describe('#getReverseText(text)', function () {
     it('Invierte el texto de entrada, verifica si el texto es un palindrome, y retorna una bandera', function () {
       const text = 'reconocer'
       const invertedText = 'reconocer'
-      const palidrome = true
-      const result = { text: invertedText, palidrome }
+      const palindrome = true
+      const result = { text: invertedText, palindrome }
       assert.deepStrictEqual(getReverseText(text), result)
     })
     it('Invierte el texto de entrada, verifica si el texto es un palindrome, y retorna una bandera', function () {
       const text = 'test'
       const invertedText = 'tset'
-      const palidrome = false
-      const result = { text: invertedText, palidrome }
+      const palindrome = false
+      const result = { text: invertedText, palindrome }
       assert.deepStrictEqual(getReverseText(text), result)
     })
   })

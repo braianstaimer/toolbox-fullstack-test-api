@@ -14,10 +14,10 @@ after(async () => {
 
 describe('Supertext - GET /iecho', function () {
   const path = '/iecho'
-  it('Invertir texto y validar si es palidrome', (done) => {
+  it('Invertir texto y validar si es palindrome', (done) => {
     const text = 'reconocer'
     const invertedText = 'reconocer'
-    const palidrome = true
+    const palindrome = true
     const params = {
       text: text
     }
@@ -29,15 +29,15 @@ describe('Supertext - GET /iecho', function () {
       .expect(200)
       .then((result) => {
         assert(result.body.text, invertedText)
-        assert(result.body.palidrome, palidrome)
+        assert(result.body.palindrome, palindrome)
       })
       .catch((err) => console.log(err))
     done()
   })
-  it('Invertir texto y validar que no es palidrome', (done) => {
+  it('Invertir texto y validar que no es palindrome', (done) => {
     const text = 'test'
     const invertedText = 'tset'
-    const palidrome = false
+    const palindrome = false
     const params = {
       text: text
     }
@@ -48,7 +48,7 @@ describe('Supertext - GET /iecho', function () {
       .expect('Content-Type', /json/)
       .expect(200, {
         text: invertedText,
-        palidrome: palidrome
+        palindrome: palindrome
       })
       .catch((err) => console.log(err))
     done()
