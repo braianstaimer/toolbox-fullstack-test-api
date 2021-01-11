@@ -1,7 +1,7 @@
 /************************************************************************
  * IMPORTS
  ************************************************************************/
-const { reverseText } = require('../services/iecho.services')
+const { getReverseText } = require('../services/iecho.services')
 /************************************************************************
  * MESSAGES
  ************************************************************************/
@@ -14,7 +14,7 @@ const { errorMessages } = require('../messages/es')
  * @param {*} req
  * @param {*} res
  */
-exports.reverseText = (req, res) => {
+exports.getReverseText = (req, res) => {
   // realizar una busqueda criterios de busqueda
   if (!req.query.text) {
     // retornar error por parámetros inválidos:
@@ -23,7 +23,7 @@ exports.reverseText = (req, res) => {
     })
   }
   // realizar operacion de invertir el texto
-  const result = reverseText(req.query.text)
+  const result = getReverseText(req.query.text)
   // Retornar informacion al cliente
   res.status(200).send(result)
 }
